@@ -1,0 +1,4 @@
+[ 2016-07-27T18:13:34+08:00 ] ::1 /thinkphp_environment/shuipfcms/index.php
+ERR: 1146:Table 'chb.chb_article' doesn't exist
+ [ SQL语句 ] : select * from chb_article  where status=99 order by inputtime desc LIMIT 9 
+

@@ -1,0 +1,1 @@
+a:7:{i:0;s:6:"tempid";i:1;s:4:"name";i:2;s:8:"tempname";i:3;s:8:"temppath";i:4;s:8:"temptext";s:3:"_pk";s:6:"tempid";s:5:"_type";a:5:{s:6:"tempid";s:11:"smallint(6)";s:4:"name";s:11:"varchar(40)";s:8:"tempname";s:11:"varchar(30)";s:8:"temppath";s:12:"varchar(200)";s:8:"temptext";s:10:"mediumtext";}}

@@ -1,0 +1,3 @@
+<?php
+//000000000300a:3:{s:7:"license";a:3:{s:9:"authorize";b:0;s:4:"name";s:15:"非授权用户";s:4:"date";i:1469614431;}s:13:"latestversion";a:2:{s:5:"build";s:8:"20150809";s:7:"version";s:5:"2.0.5";}s:6:"notice";a:5:{s:2:"id";s:1:"5";s:5:"title";s:31:"ShuipFCMS 2.0.5新版本发布~";s:7:"content";s:469:"<p style="white-space: normal;">最新版更新了ThinkPHP框架，修复一些已知的SQL注入问题~建议大家更新。</p><p style="white-space: normal;">2.0.4升级说明：<a href="http://www.shuipfcms.com/news/19.shtml" target="_blank">http://www.shuipfcms.com/news/19.shtml</a></p><p style="white-space: normal;">2.0.5全新安装：<a href="http://www.shuipfcms.com/download.shtml" target="_blank">http://www.shuipfcms.com/download.shtml</a></p><p><br/></p>";s:3:"url";s:38:"http://www.shuipfcms.com/news/19.shtml";s:11:"create_time";s:1:"0";}}
+?>
