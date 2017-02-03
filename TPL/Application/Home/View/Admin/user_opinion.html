@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>意见反馈</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<div>
+    <form name="fuser_list" id="fuser_list" method="post" action="__URL__/user_opinion">
+        <label>起始时间 从</label>
+        <input name="backtime_begin" id="backtime_begin" type="date" value={$backtime_begin} width="100px">
+        <label>到 结束时间</label>
+        <input name="backtime_end" id="backtime_end" type="date" value={$backtime_end} width="100px">
+        <input name="user_count" id="user_count" type="submit" value="查&nbsp询">
+    </form>
+</div>
+<div id="content">
+        <table class="table" border="1">
+            <thead>
+            <tr>
+                <th width="10%">用户ID</th>
+                <th width="10%">用户昵称</th>
+                <th width="30%">反馈意见</th>
+                <th width="10%">apk版本</th>
+                <th width="15%">反馈时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name='user_opinion' item='vo'>
+                <tr>
+
+                    <td align="center">{$vo['userID']}</td>
+                    <td align="center">{$vo['nickname']}</td>
+                    <td align="center">{$vo['opinion']}</td>
+                    <td align="center">{$vo['version']}</td>
+                    <td align="center">{$vo['backtime']|date='Y-m-d H:i:s',###}</td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户提现</title>
+</head>
+<body>
+<form name="fuser_withdraw" id="iuser_withdraw" method="post" action="__URL__/user_withdraw">
+        <label>申请时间 从</label>
+        <input name="installtime_begin" type="date" value={$installtime_begin} width="100px">
+        <label>到：</label>
+        <input name="installtime_end" type="date" value={$installtime_end} width="100px"><br/><br/>
+        <label><input name="withdraw_stat" type="radio" value="0" checked/>未取现 </label>
+        <label><input name="withdraw_stat" type="radio" value="1"/>已取现 </label>&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="搜&nbsp索">
+    </div>
+</form>
+<table>
+    <tr>
+        <th width="15%">申请时间</th>
+        <th width="15%">用户ID</th>
+        <th width="15%">取现金额</th>
+        <th width="15%">取现方式</th>
+        <th width="15%">取现账户</th>
+        <th width="15%">取现状态</th>
+        <th width="10%">操作</th>
+    </tr>
+    <volist name="user_withdraw" id="vuwd">
+        <tr>
+            <td align="center">{:date('Y-m-d H:i:s', $vuwd['userWithdrawTime'])}</td>
+            <td align="center">{$vuwd['userID']}</td>
+            <td align="center">{$vuwd['withdrawMoney']}</td>
+            <td align="center">{$vuwd['withdrawType']}</td>
+            <td align="center">{$vuwd['withdrawAccount']}</td>
+            <td align="center">{$vuwd['withdrawStatus']}</td>
+            <td align="center"><a href="">查看</a></td>
+        </tr>
+    </volist>
+</table>
+</body>
+</html>

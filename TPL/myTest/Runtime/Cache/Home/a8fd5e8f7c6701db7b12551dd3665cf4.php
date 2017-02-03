@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-<form name="login" id="flogin" method="post" action="/thinkphp_environment/index.php/Home/Admin/login">
+<form name="login" id="flogin" method="post" action="/TPL/index.php/Home/Admin/login">
     帐号：<input type="text" name="username" id="user" maxlength="16" /><br /><br />
     密码：<input type="password" name="password" id="pwd" maxlength="16" /><br /><br />
     <input type="submit" name="btn1" id="btn1" value="登录" />

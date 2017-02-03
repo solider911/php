@@ -150,4 +150,27 @@ class IndexController extends Controller {
     public function rwitetest(){
         echo "haha";
     }
+
+    public  function insert_now(){
+
+        $time = date("Y-m-d H:i:s", time());
+        echo $time;
+        return;
+
+        $sql_score = "insert into chb_score (score, auther, time) VALUES (1232,\"chb\", $time)";
+        mysql_query($sql_score);
+
+        echo $sql_score;
+    }
+
+
+    public function tCount(){
+
+        $table_score = M("Score");
+        $ret_score = $table_score->where("auther='score100'")->select();
+
+        echo count($ret_score);
+
+    }
+
 }

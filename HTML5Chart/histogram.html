@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="Scripts/histogram/Data.js" ></script>
+    <script type="text/javascript" src="Scripts/histogram/quickwin.verticalbar.js" ></script>
+    <script type="text/javascript" src="Scripts/histogram/quickwin.horizontalbar.js" ></script>
+     <script type="text/javascript" src="Scripts/histogram/quickwin.histogram.js" ></script>
+</head>
+<body>
+   <canvas id ="myCanvas"  style="border:1px solid #d3d3d3;" ></canvas>
+
+<script type="text/javascript">
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    
+    var v = new histogram(ctx, jasonData,2000);   
+    v.draw();
+
+</script>
+</body>
+</html>

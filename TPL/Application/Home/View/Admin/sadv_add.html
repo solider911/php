@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户详情</title>
+</head>
+<body>
+<form name="formtask" id="form1"  action="http://sss.51dahongbao.com/index.php?c=index&a=taskInc" method="post">
+    <div class="taskmain">
+        <div class="taskbrief">
+            <h3>任务基本信息</h3>
+            <table>
+                <tr><td>app 名称：</td><td><input type="text" name="taskName" required="required"/></td></tr>
+                <tr><td>广告开启：</td><td><input type="text" name="openflag"/></td></tr>
+                <tr><td>邀 请 码：</td><td><input type="text" name="requireInvite_number" /></td></tr>
+                <tr><td>简略描述：</td><td><input  type="text" name="escription" required="required"/></td></tr>
+                <tr><td>详细描述：</td><td><input  type="text" name="detailDescription" required="required"/></td></tr>
+                <tr><td>图标地址：</td><td><input  type="text" name="iconURL" required="required"/></td></tr>
+                <tr><td>图片1地址：</td><td><input  type="text" name="img1URL" required="required"/></td></tr>
+                <tr><td>图片2地址：</td><td><input  type="text" name="img2URL" required="required"/></td></tr>
+                <tr><td>下载地址：</td><td><input  type="text" name="downloadURL" required="required"/></td></tr>
+                <tr><td>App 大小：</td><td><input  type="text" name="appSize" required="required"/></td></tr>
+                <tr><td>包    名：</td><td><input  type="text" name="taskPackageName" required="required"/></td></tr>
+            </table>
+            <label>是否要求登录：<input type="checkbox" name="requireLogin" /></label><br/>
+            <label>是否要求注册：<input type="checkbox" name="requireRegister" /></label><br/>
+            <label>是否要求SIM卡：<input type="checkbox" name="requireSimcard" /></label><br/>
+        </div>
+        <div class="taskdetail">
+            <h3>任务详细信息</h3>
+            <div>
+                <table cellspacing="3">
+                    <tr>
+                        <td>任务步骤</td>
+                        <td>步骤类型</td>
+                        <td>执行参数</td>
+                        <td>该步骤可得积分数</td>
+                        <td>任务步骤描述</td>
+                    </tr>
+                    <tr><!--第一步必须填-->
+                        <td><input class="inputpos" type="text" value="1"/></td>
+                        <td>
+                            <select name="stepType">
+                                <option value="1" selected="selected"> 安装 </option>
+                                <option value="2"> 体验 </option>
+                                <option value="3"> 安装、体验 </option>
+                                <option value="4"> 登录 </option>
+                                <option value="5"> 注册 </option>
+                                <option value="6"> SIM卡验证 </option>
+                                <option value="7"> 邀请码 </option>
+                            </select>
+                        </td>
+                        <td><input class="inputpos" type="text" name="stepArgc" required="required"/></td>
+                        <td><input type="text" name="stepScore" required="required"/></td>
+                        <td><input type="text" name="stepState" required="required"/></td>
+                    </tr>
+                </table>
+                <button name="add_step" value="添加步骤"/>
+            </div>
+            <br/>
+            <div>
+                <dl>
+                    <dt>执行参数：</dt>
+                    <dd>当步骤类型为安装时，可设置为0；</dd>
+                    <dd>当步骤类型为安装体验时，执行参数为体验时间（分钟），比如5（分钟）；</dd>
+                    <dd>当步骤类型为体验时，执行参数为体验时间（分钟）；</dd>
+                    <dd>当步骤类型为登录时，可设置为0；</dd>
+                    <dd>当步骤类型为注册时，执行参数为注册码；</dd>
+                    <dd>当步骤类型为SIM卡验证时，执行参数为SIM卡；</dd>
+                    <dd>当步骤类型为邀请码时，执行参数为邀请码；</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="taskfoot">
+        <input type="submit" name="btn1" id="btn1" value="提交" />
+        <input type="reset" name="btn2" id="btn2" value="重置" />
+    </div>
+</form>
+</body>
+</html>

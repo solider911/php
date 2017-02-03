@@ -24,7 +24,7 @@ $db_conn = null;
 
     if($db_conn){
 
-        $sql_zipurl = "SELECT zipurl FROM tasklist  WHERE apkid=25 and zipurl!=\"\" AND installtime BETWEEN 1472486400 AND 1472572800";
+        $sql_zipurl = "SELECT zipurl FROM tasklist  WHERE apkid=25 and zipurl!=\"\" AND installtime BETWEEN 1473177600 AND 1473264000";
         $ret_zipurl = mysql_query($sql_zipurl, $db_conn) or die("zipurl query failed : " . mysql_error());
 
         $old_dir = "./2016-08-30/";  // 原目录
@@ -46,5 +46,25 @@ $db_conn = null;
 
         mysql_close($db_conn);
     }
+
+
+function send_post($url, $post_data) {
+
+    $postdata = http_build_query($post_data);
+    $options = array(
+        'http' => array(
+            'method' => 'POST',
+            'header' => 'Content-type:application/x-www-form-urlencoded',
+            'content' => $postdata,
+            'timeout' => 15 * 60 // 超时时间（单位:s）
+        )
+    );
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+
+    return $result;
+}
+
+
 
 

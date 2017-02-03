@@ -140,11 +140,4 @@ class AdminController extends Controller {
     }
 
 
-    public function tdate(){
-        //$date = date("Y-m-d");
-
-        $turl = U("ww");
-
-        echo $turl;
-    }
 }

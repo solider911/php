@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<div>
+    <form name="fuser_list" id="fuser_list" method="post" action="__URL__/user_list">
+        <label>注册时间 从</label>
+        <input name="installtime_begin" id="installtime_begin" type="date" value={$installtime_begin} width="100px">
+        <label>到</label>
+        <input name="installtime_end" id="installtime_end" type="date" value={$installtime_end} width="100px">
+        <input name="user_count" id="user_count" type="submit" value="查&nbsp询">
+    </form>
+</div>
+<div>
+    <table border="solid 1px">
+        <thead>
+        <tr>
+            <th width="30%">注册时间</th>
+            <th width="10%">用户ID</th>
+            <th width="10%">用户昵称</th>
+            <th width="10%">余额</th>
+            <th width="10%">积分</th>
+            <th width="20%">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name='user_list' item='vo'>
+            <tr>
+                <td align="center">{:date('Y-m-d H:i:s', $vo.registerTime)}</td>
+                <td align="center">{$vo.userID}</td>
+                <td align="center">{$vo.nickname}</td>
+                <td align="center">{$vo.totalMoney}</td>
+                <td align="center">{$vo.score}</td>
+                <td align="center"><a href="user_detail.html">管理</a></td>
+            </tr>
+        </foreach>
+        <!--<volist name="user_list" id="vulist">-->
+            <!--<tr>-->
+                <!--<td align="center">{:date('Y-m-d H:i:s', $vulist['registerTime'])}</td>-->
+                <!--<td align="center">{$vulist['userID']}</td>-->
+                <!--<td align="center">{$vulist['nickname']}</td>-->
+                <!--<td align="center">{$vulist['totalMoney']}</td>-->
+                <!--<td align="center">{$vulist['score']}</td>-->
+                <!--<td align="center"><a href="user_detail.html">管理</a></td>-->
+            <!--</tr>-->
+        <!--</volist>-->
+        </tbody>
+    </table>
+    <div >{$user_page}</div>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+    function server(id){
+        var id = id;
+        $.get('/Server/myinfo', {'p':id}, function(data){
+            //用get方法发送信息到Server中的myinfo方法
+            $("#server").replaceWith("<div  id='user7'>"
+                    +data.content+
+                    "</div>");
+        });
+    }
+</script>
+</body>
+</html>

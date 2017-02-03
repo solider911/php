@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户流失</title>
+</head>
+<body>
+<form name="fuser_list" id="fuser_list" method="post" action="__URL__/user_list">
+    <label>注册时间 从</label>
+    <input name="installtime_begin" id="installtime_begin" type="date" value={$installtime_begin} width="100px">
+    <label>到</label>
+    <input name="installtime_end" id="installtime_end" type="date" value={$installtime_end} width="100px">
+    <input name="user_count" id="user_count" type="submit" value="查&nbsp询">
+</form>
+</body>
+</html>

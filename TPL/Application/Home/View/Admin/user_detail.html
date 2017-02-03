@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户详情</title>
+</head>
+<body>
+    <form name="user_search" method="post" action="__URL__/user_detail" style="border:solid 1px; border-color: #00a0e9 ">
+        <input type="text" name="search_user" id="search_user" placeholder="用户ID" value={$user_search}>
+        <input type="submit" value="查&nbsp;询">
+    </form>
+    <div name="user_base" style="border:solid 1px; border-color: #00a0e9 ">
+        <h3>用户基本详情</h3>
+        <div>
+            <b>用户ID：</b>
+            <label>{$user_base['userID']}</label>
+        </div>
+        <div>
+            <b>师傅ID：</b>
+            <label>{$user_base['masterID']}</label>
+        </div>
+        <div>
+            <b>注册时间：</b>
+            <label>{:date('Y-m-d H:i:s', $user_base['registerTime'])}</label>
+        </div>
+        <div>
+            <b>绑定账号：</b>
+            <span>无</span>
+        </div>
+        <form>
+            <b>当前积分：</b>
+            <input type="text" name="base_score" id="base_score" placeholder="0" value={$user_base['score']} />
+            <input type="submit" value="修改"/>
+        </form>
+        <div>
+            <b>当前余额：</b>
+            <input type="text" name="base_money" id="base_money" placeholder="0" value={$user_base['totalMoney']} />
+            <input type="submit" value="修改"/>
+        </div>
+    </div>
+    <div  style="border:solid 1px; border-color: #00a0e9 ">
+        <h3>累计积分获得数</h3>
+        <ul>
+            <volist name="user_score" id="vus">
+                <li width="50%">
+                    {$vus['platformID']}  {$vus['platformScore']}
+                </li>
+            </volist>
+        </ul>
+    </div>
+    <div name="user_redpacketleft" style="border:solid 1px; border-color: #00a0e9 ">
+        <h3>用户红包剩余</h3>
+        <div>
+            <ul>
+                <li>1541</li>
+                <li>1541</li>
+                <li>1541</li>
+            </ul>
+        </div>
+    </div>
+    <div name="user_masterinfo"  style="border:solid 1px; border-color: #00a0e9 ">
+        <h3>师徒信息</h3>
+        <b>徒弟列表：</b>
+        <table border="1">
+            <tr>
+                <th width="10%">用户ID</th>
+                <th width="15%">注册时间</th>
+                <th width="15%">收徒成功</th>
+            </tr>
+            <volist name="user_pupillist" id="vpl">
+                <tr>
+                    <td align="center">{$vpl['userID']}</td>
+                    <td align="center">{:date('Y-m-d H:i:s', $vpl['registerTime'])}</td>
+                    <td align="center">成功</td>
+                </tr>
+            </volist>
+        </table>
+    </div>
+</body>
+</html>
