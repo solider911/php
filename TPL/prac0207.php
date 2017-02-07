@@ -34,8 +34,26 @@ _END;
 
 if($_FILES){
     $name = $_FILES['filename']['name'];
-    move_uploaded_file($_FILES['filename']['tmp_name'], $name);
-    echo "Upload image";
+
+    switch($_FILES['filename']['type']){
+        case 'image/jpeg':$ext = 'jpg';break;
+        case 'image/gif':$ext = 'gif';break;
+        case 'image/png':$ext = 'png';break;
+        case 'image/tiff':$ext = 'tif';break;
+        default:$ext='';break;
+    }
+
+    if($ext){
+        $n = "image.$ext";
+        move_uploaded_file($_FILES['filename']['tmp_name'],  $n);
+        echo "Upload image $name as $n";
+        echo "<img src='$n'>";
+    }else{
+        echo "'$name' is not an accepted image file";
+    }
+}
+else{
+    echo "no image be uploaded";
 }
 
 echo "</body></html>";
